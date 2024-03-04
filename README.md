@@ -1,9 +1,9 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+# DATE : 02-03-2024
+# NAME : Prajin S
+# ROLLNUMBER : 212223230151
+# DEPARTMENT : Artificial Intelligence and Data Sceince
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -79,29 +79,50 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+```
+int LED=7;
+int FSR;
+void setup()
+{
+  pinMode(LED,OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  FSR=analogRead(A0);
+  Serial.print("Raw value =");
+  Serial.println(FSR);
+  delay(500);
+  int m;
+  m=map(FSR,0,159,0,10);
+  Serial.print("Mapped value =");
+  Serial.println(m);
+  if(FSR>50)
+  {
+    digitalWrite(LED,LOW);
+    delay(500);
+    digitalWrite(LED,HIGH);
+    delay(500);
+  }
+}
+```
  
 
 ![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
 
 
 ### TABLE -02 standard deviation table 
+
+![WhatsApp Image 2024-03-04 at 09 26 03 (1)](https://github.com/Prajin19/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144979377/1d666c87-7052-41ad-a81f-9da31fb27322)
+
+
+
+#### Figure No-4 Graph:
+![WhatsApp Image 2024-03-04 at 09 26 03](https://github.com/Prajin19/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144979377/a152676c-cd80-465e-b657-d66599b2c827)
+
+
+
 ### Population Standard Deviation
 The population standard deviation, the standard definition of σ, is used when an entire population can be measured, and is the square root of the variance of a given data set. In cases where every member of a population can be sampled, the following equation can be used to find the standard deviation of the entire population:
 
@@ -119,6 +140,17 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 σ = √(12.96 + 2.56 + 0.36 + 5.76 + 11.56)/5 = 2.577
 
 
+### Simulation Output:
+#### Figure No- 5 OFF Condition:
+![WhatsApp Image 2024-03-04 at 09 25 49](https://github.com/Prajin19/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144979377/09953625-69a0-42c9-9cfa-8f17d67fc649)
+
+#### Figure No- 6 ON Condition:
+![WhatsApp Image 2024-03-04 at 09 25 49 (1)](https://github.com/Prajin19/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144979377/c319e907-6845-4fdc-a40a-f7c6e6f83820)
+
+
+
+#### Schematic Simulation:
+![WhatsApp Image 2024-03-04 at 09 26 03 (2)](https://github.com/Prajin19/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/144979377/1f948607-01fa-4e87-9a0e-c3e5e67aa969)
 
 
 
@@ -128,8 +160,5 @@ EX:           μ = (1+3+4+7+8) / 5 = 4.6
 
 
 
-
-
-
-
-### RESULTS : Arduino uno is interfaced with FSR and output values are indicated on a graph.
+### RESULTS : 
+Arduino uno is interfaced with FSR and output values are indicated on a graph.
