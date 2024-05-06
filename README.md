@@ -1,6 +1,6 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE : 18-04-2024
+# DATE : 18-03-2024
 # NAME : Prajin S
 # ROLLNUMBER : 212223230151
 # DEPARTMENT : Artificial Intelligence and Data Sceince
